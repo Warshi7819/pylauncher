@@ -4,6 +4,12 @@ AL is an application launcher. Simply put it's a tiny application that helps you
 
 Originally created in the early 2000's, last release v1.0.7 was in 2007. This is a resurrection effort, ported to Python 3.14 and wxPython 4.x.
 
+## Screenshots
+
+| Main Window | Settings | Wizard |
+|:-----------:|:--------:|:------:|
+| ![Main Window](screenshots/al.png) | ![Settings](screenshots/settings.png) | ![Wizard](screenshots/wizard.png) |
+
 ## Features
 
 - **Wizard:** A wizard that enables you to learn how to use it in less than 2 minutes.
