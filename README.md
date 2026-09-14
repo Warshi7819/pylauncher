@@ -53,6 +53,26 @@ Press the cog icon in the upper left corner of the AL application to configure i
 - You can configure AL's behaviour.
 - You can create aliases to different programs or actions.
 
+## Run It From Source
+
+### Prerequisites
+
+- Python 3.14
+- Windows (required for pywin32 and win32 API dependencies)
+
+### Install Dependencies
+
+```bash
+pip install wxpython pywin32
+```
+
+### Run
+
+```bash
+cd src
+python Al.py
+```
+
 ## Credits
 
 - **Developers:** Rune Devik, Kjetil Jacobsen
