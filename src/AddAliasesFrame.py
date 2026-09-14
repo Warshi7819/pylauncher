@@ -191,7 +191,7 @@ class AddAliasesFrame(wx.Frame):
         Returns: None
         """
                     
-        self.progText.SetLabel(text)
+        self.progText.SetValue(text)
         
 
     def addAndClose(self, event=None):
@@ -204,7 +204,7 @@ class AddAliasesFrame(wx.Frame):
         """
         
         # Fetch name
-        name = self.nameCtrl.GetLabel().strip()
+        name = self.nameCtrl.GetValue().strip()
 
         # The name has to be something..
         if len(name) == 0:
@@ -219,10 +219,10 @@ class AddAliasesFrame(wx.Frame):
             return
             
         # Fetch exec string
-        execString = self.progText.GetLabel().strip()
+        execString = self.progText.GetValue().strip()
         
         # Fetch arguments
-        arguments = self.arguments.GetLabel().strip()
+        arguments = self.arguments.GetValue().strip()
         
         # Update alias
         if self.index != None:
