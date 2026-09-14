@@ -1,0 +1,62 @@
+
+--- Old History ---
+
+Todo:
+
+ - Since the application started currently inherits the env from AL it will also
+   inherit the current python dll version used when freezing AL. This might have 
+   interesting side effects for a python programmer which is not using the same 
+   version of python as AL do since both python version DLL's will be in path. 
+   Seen problems both in cmd and eclipse caused by this. Should be able to start a
+   program without it inherits the parent env
+
+ - Use the http://en.wikipedia.org/wiki/Levenshtein_distance for spellchecking the entered queries
+   based on the indexed content.
+ 
+ - Clean up history for deleted items..
+
+ - Make splash screen configurable
+
+ - Make start AL on start up configurable?
+
+ - Add skin support
+
+ - Add support for remove a given id from the suffix tree so that we do not have to refresh the whole tree on an
+   update.
+
+ - Maybe be able to search for directories and if a directory is "executed"
+   just fire up explorer to show its content.
+
+ - Update wizard to talk about available search plugins like 
+   g:, w:, gg: und so weiter..
+
+ - Add support for dragging AL around and ensure that the position is saved 
+   when the user closes the application. Maybe add a lock option or something 
+   so that the user can unlock move and lock the position..
+
+ - Fix the launching of the wizard from the dailog.
+
+ - See if we can specify working dir when executing the programs. 
+   Some crappy programs don't handle to be executed with full path 
+   but needs CWD to be the same dir as the dir where the executable
+   resides
+ 
+ - Result list
+  * add icons here as well
+  * remove top bar (maybe set it to sunken if possible..)
+  * Remove vertical slider (If possible)
+
+ - Make menu items of activ applications searchable and executable
+    * Seperate suffix tree
+    * or implement the delete operation on the suffix tree
+    * Figure out how to display results..
+ 
+ - Addons I would like to have:
+   * putty session parser.
+   * Create putty "search plugin". Usage e.g. putty:user@@machine only available
+     if pytty is installed on the machine
+
+
+MORE INFO NEEDED:
+
+  - Add music search plugin. On hold.. can't find a good artist/song searchengine that has good data and responds quickly..

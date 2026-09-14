@@ -1,0 +1,26 @@
+AL - Application Launcher
+-------------------------
+
+Chapter 1: Needed software
+Chapter 2: Fire up AL from the source.
+
+-----------
+- Chapter 1  Needed software
+
+python 2.3 or higher:
+http://www.python.org
+
+wxpython:
+http://www.wxpython.org
+
+pywin32:
+http://python.net/crew/skippy/win32/Downloads.html
+
+-----------
+- Chapter 2 Fire up AL from the source
+
+ * Install the software described in chapter 1
+ * check out the entire launcher directory from cvs
+ * cd launcher\src
+ * copy the icons and the images directory to the src directory
+ * python Al.py

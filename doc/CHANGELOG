@@ -1,0 +1,124 @@
+
+2026:
+ - Ported to Python 3.12 and wxPython 4.3.1
+
+
+--- Old History ---
+V_1_0_7_RELEASE
+ - Updated to python 2.5
+ 
+ - upgraded to latest available wxPython version 2.8.4.0
+ 
+ - Now we listen to the directories that has been added to AL and request
+   an idle reindex when they change. An idle reindex is a reindex that is 
+   performed only after the machine has been idle for 10 minutes. That is, no
+   keyboard nor mouse input for the last 10 minutes. This will reduce the need
+   for forced reindexes. 
+
+ - Fixed bug where we sometimes when "guessing" encoding fired off more than
+   one instance of the user requested application
+
+ - Set tooltip when using search plugins. Using the short description they offer.
+
+ - When a serch plugin fires, the pattern that triggers the plugin from
+   the panel showing what's going to be executed is no longer displayed. 
+ 
+ - Added username to unique application name used to figure out if an
+   instance is already running so that several users on the same machine
+   is able to use AL at the same time.
+
+V_0_1_6_RELEASE
+ - Making aliases configurable under the config panel
+	
+ - Fixed icon transparency.
+
+ - Added IMDB (movie) search plugin. The user can now type m:<search term> to 
+   execute a search on imdb.com. E.g. 
+   "m:matrix".
+	
+ - Added icon support for search plugins. When a query now matches a search
+   plugin like "w:tore hund" the wikipedia icon will be shown along with the
+   current query the user has typed in.
+
+ - Changed icons on the default skin. Using some icons from FAM FAM FAM
+	
+ - Introducing internal version controll of applist and history. That means
+   that this version of AL will not support importing the history file from the
+   previous version but will discard that one and start on a new one.
+	
+ - redirecting output to log file so that we have logs we can investigate
+   when errors occur.. The logg is situtated in the users AppData directory 
+   and is named AL_log.txt
+	
+ - Fixing bug in web: search plugin where addresses that doesn't begin 
+   with http or www fails to be launched
+
+V_0_1_5_RELEASE
+ - config data is now saved on a per user basis
+	
+ - AL now supports icons! :)
+	
+ - The indexer plugins are now configurable under the Addons tab in the
+   configuration window
+	
+ - Adding google groups search plugin. The user can now type
+   gg:<search term> to execute a search on Google groups. E.g. 
+   "gg:python "simply the best"".
+	
+ - Adding mailto plugin so that the user is able to execute e.g:
+   mailto:<mail address>
+   this will start up the default mailbrowser with a new message where
+   the to address field is filled in with the data provided by the user.
+   Typing only:
+   mailto:
+   will startup the default mailbrowser with a blank message
+	
+ - Rewriting AL to a plugin architecture to make it easier to develop
+   new features in the future
+
+V_0_1_4_RELEASE
+ - Indexing bookmarks from mozilla firefox if it's present on the system
+   The option is not configurable at the moment..
+	
+ - Adding support for search on dictionary.com. The user can now type
+   d:<search term> to execute a search on dictionary.com. 
+   E.g. "d:norway".
+	
+ - Adding support for wikipedia search. The user can now type
+   w:<search term> to execute a search on wikipedia. E.g. "w:tore hund".
+	
+ - Adding support for search on google. The user can now type
+   g:<search term> to execute a search on google. E.g. "g:sourceforge".
+	
+ - We now also split the app name into words and index first 
+   char in each word. E.g. "microsoft word" becomes: "mw". The
+   user can now search on mw and get a hit on e.g. microsoft word
+	
+V_0_1_3_RELEASE 
+ - Set version on config so that we are able to upgrade
+   even when there are config changes that breaks the 
+   backwards compatibility. If an incompatible config already
+   exists we now load the default config instead of crashing
+	
+ - A wizard is now displayed at startup so the user
+   is able to learn how to use the application
+	
+V_0_1_2_RELEASE
+ - Create default aliases.txt file when this is not present
+	
+ - Only allow one instance of AL to be running
+	
+V_0_1_1_RELEASE:
+ - Changed default hotkeys from <ctrl><space> to <alt><space>. 
+   Think all emacs users will thank me for that someday ;)
+	
+ - Made hotkeys, window on-top and always display search result window 
+   configurable under the UI options
+	
+ - Now AL is added to the startup folder during install
+	
+ - Fixed support for filenames encoded in:
+   'us-ascii','iso-8859-1','iso-8859-2'
+	
+V_0_1_0_RELEASE:
+ - Initial SF release
