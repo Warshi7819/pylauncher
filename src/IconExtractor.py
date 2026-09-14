@@ -19,7 +19,15 @@ import pythoncom
 import wx
 
 # Import own modules
-from GuiUtils import openAsBitmap
+from GuiUtils import openAsBitmap, rescaleBitmap
+
+_defaultBitmap = None
+
+def _getDefaultBitmap():
+    global _defaultBitmap
+    if _defaultBitmap is None:
+        _defaultBitmap = rescaleBitmap(openAsBitmap("icons/default.png"))
+    return _defaultBitmap
 
 def convertIconToBitmap(icon):
     try:
@@ -59,7 +67,7 @@ def getIcon(filename, _seen=None):
     if _seen is None:
         _seen = set()
     if filename in _seen:
-        return wx.Bitmap(16, 16)
+        return _getDefaultBitmap()
     _seen.add(filename)
 
     # http == .url
@@ -81,7 +89,7 @@ def getIcon(filename, _seen=None):
             # Get the data
             return getIcon(sh.GetPath(shell.SLGP_RAWPATH)[0], _seen)
         except Exception:
-            return wx.Bitmap(16, 16)
+            return _getDefaultBitmap()
 
 
     # Can't handle .exe so transforming that one to .com instead..
@@ -114,7 +122,7 @@ def getIcon(filename, _seen=None):
             if icon.IsOk():
                 return convertIconToBitmap(icon)
 
-    return wx.Bitmap(16, 16)
+    return _getDefaultBitmap()
 
 
     
