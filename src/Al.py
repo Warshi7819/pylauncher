@@ -325,7 +325,7 @@ class AlFrame(wx.Frame):
         Returns: None
         """
         selected = getSelected(self.applicationList.appList)
-        searchString = self.inputField.GetLabel().lower()
+        searchString = self.inputField.GetValue().lower()
         
         if selected:
             try:

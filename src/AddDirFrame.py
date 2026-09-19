@@ -185,7 +185,7 @@ class AddDirFrame(wx.Frame):
         Returns: None
         """
         # Fetch extensions
-        tmp = self.extensions.GetLabel().split(",")
+        tmp = self.extensions.GetValue().split(",")
         exts = []
         
         for ext in tmp:
@@ -193,7 +193,7 @@ class AddDirFrame(wx.Frame):
             if ext:
                 exts.append(ext)
 
-        name = self.nameCtrl.GetLabel().strip()
+        name = self.nameCtrl.GetValue().strip()
 
         ret = self.config.addItem(name, self.path,
                                   exts, self.edit)

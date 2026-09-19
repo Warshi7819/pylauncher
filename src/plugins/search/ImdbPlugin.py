@@ -83,7 +83,6 @@ class ImdbPlugin(SearchObject.SearchObject):
             else: 
                 pass
 
-
         if not encoded:
             print("encoding failed")
             return
@@ -92,6 +91,7 @@ class ImdbPlugin(SearchObject.SearchObject):
         address = "http://www.imdb.com/find?s=all&%s"
         query = urlencode({"q":searchString[2:]})
         address = address % query
+
         # Execute it
         command = (address, False)
         appLaunch = AppLauncher(command)
