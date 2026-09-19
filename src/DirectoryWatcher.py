@@ -31,7 +31,7 @@ class DirectoryWatcher(threading.Thread):
         """
         Class constructor
         Args:
-          None
+          callBackMethod = The callback method to invoke on directory changes
         """
         
         threading.Thread.__init__(self)

@@ -15,6 +15,7 @@ from GuiUtils import openAsBitmap
 
 
 class ApplicationList(wx.Frame):
+    """Frame that displays the list of applications matching the search."""
 
     def __init__(self, parent, config):
         """

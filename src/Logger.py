@@ -20,6 +20,7 @@ class Logger:
     def __init__(self):
         """
         Class constructor
+        Args: None
         """
         pass
 
@@ -28,7 +29,7 @@ class Logger:
         """
         Method to print a message as a warning
         Args:
-          string [STRING] : the message
+          string [STRING] = the message
 
         Returns: None
         """

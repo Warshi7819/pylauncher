@@ -232,5 +232,12 @@ Note:
             dlg.Destroy()
 
     def close(self, event=None):
+        """
+        Method to close the indexer config panel
+        Args:
+          event = The close event
+
+        Returns: None
+        """
         if event:
             event.Skip()

@@ -31,7 +31,7 @@ class AddAliasesFrame(wx.Frame):
           parent = The parent frame
           edit = The key of the element we want to edit
                  None if this is a new element
-        
+          index = The index of the alias being edited
         """
 
 
@@ -198,7 +198,7 @@ class AddAliasesFrame(wx.Frame):
         """
         Method to close config window
         Args:
-          evt [OBJ] = The close event
+          event = The close event
 
         Returns: None
         """

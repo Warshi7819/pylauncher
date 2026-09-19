@@ -44,10 +44,9 @@ class DictionaryPlugin(SearchObject.SearchObject):
     def getEnabler(self):
         """
         Method that returns the search enabler
-        Args:
-          None
+        Args: None
 
-        Returns
+        Returns: [STRING] The search enabler prefix
         """
         return self.searchEnabler
 
@@ -59,7 +58,7 @@ class DictionaryPlugin(SearchObject.SearchObject):
         Args:
           None
 
-        Returns [STRING] The relative path to the image
+        Returns: [STRING] The relative path to the image
         """
 
         return "icons\\dictionaryIcon.ico"

@@ -17,7 +17,7 @@ def convertIconToBitmap(icon):
     Args:
       icon = The icon to convert
 
-    Retruns: The icon as a bitmap
+    Returns: [BITMAP] The icon as a bitmap
     """
     bitmap = wx.Bitmap(32, 32)
     bitmap.CopyFromIcon( icon )
@@ -25,6 +25,13 @@ def convertIconToBitmap(icon):
 
 
 def rescaleBitmap(bitmap):
+    """
+    Function to rescale a bitmap to 16x16
+    Args:
+      bitmap = The bitmap to rescale
+
+    Returns: [BITMAP] The rescaled bitmap
+    """
     image = bitmap.ConvertToImage()
     image.Rescale(16, 16)
     return wx.Bitmap(image)
@@ -36,7 +43,7 @@ def bitmapType(filename):
     Args:
       filename = The filename of the image
       
-    Returns: The correct wx.BITMAP_TYPE
+    Returns: [BITMAP_TYPE] The correct wx.BITMAP_TYPE
     """
     if filename.lower().endswith("ico"):
         return wx.BITMAP_TYPE_ICO
@@ -56,6 +63,13 @@ def bitmapType(filename):
         raise Exception("Image type unknown: %s"% filename)
 
 def openAsBitmap(file):
+    """
+    Function to open an image file as a bitmap
+    Args:
+      file = The path to the image file
+
+    Returns: [BITMAP] The image as a bitmap
+    """
     imgType = bitmapType(file)
     img = wx.Image(file, imgType).ConvertToBitmap()
     return img
@@ -66,7 +80,7 @@ def getSelected(list):
     Args:
       list = The list
 
-    Returns: The selected items in reverse order
+    Returns: [LIST] The selected items in reverse order
     """
     selected = []
     item = list.GetFirstSelected()

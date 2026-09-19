@@ -15,8 +15,21 @@ import wx.lib.agw.hyperlink as hl
 
 
 class QuestionDialog(wx.Dialog):
+    """Dialog that displays a question and waits for user confirmation."""
+
     def __init__(self, parent, ID, title, question,size=wx.DefaultSize,
                  pos=wx.DefaultPosition, style=wx.DEFAULT_DIALOG_STYLE):
+        """
+        Initialize the question dialog.
+        Args:
+          parent = The parent window
+          ID = The dialog ID
+          title = The dialog title
+          question = The question to display
+          size = The dialog size
+          pos = The dialog position
+          style = The dialog style
+        """
         
         wx.Dialog.__init__(self, parent, ID, title, pos, size, style)
 

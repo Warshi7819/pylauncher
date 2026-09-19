@@ -216,4 +216,11 @@ class AddDirFrame(wx.Frame):
             self.close()
 
     def close(self, event=None):
+        """
+        Method to close the add directory frame.
+        Args:
+          event = The close event
+
+        Returns: None
+        """
         self.Destroy()

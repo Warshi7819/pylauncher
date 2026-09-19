@@ -28,6 +28,7 @@ class AppList:
         Class constructor
         Args:
           config = AL's config
+          indexer = The indexer object
         """
         # Hold on to config
         self.config = config
@@ -65,8 +66,7 @@ class AppList:
         """
         Method to repopulate the application list from
         both directories, alias.txt file and plugins
-        Args:
-          directories = The directories to traverse
+        Args: None
 
         Returns: None
         """
@@ -117,7 +117,7 @@ class AppList:
         Args:
           None
 
-        Returns: The loaded data or an empty list if it fails
+        Returns: [LIST] The loaded data or an empty list if it fails
         """
         tmp = loadFromFile(join(self.config.config["appDataDir"], "applist.dat"))
         
@@ -152,7 +152,7 @@ class AppList:
         Args:
           None
 
-        Returns: The loaded information or an empty dictionary if an
+        Returns: [DICT] The loaded information or an empty dictionary if an
                  error occures
         """
         tmp = loadFromFile(join(self.config.config["appDataDir"], "history.dat"))
@@ -185,8 +185,9 @@ class AppList:
         Args:
           resultSet = The initial resultset from the suffix tree
                       search
+          startChar = The starting character of the search
 
-        Returns: A subset of the appIndex that matches the original
+        Returns: [LIST] A subset of the appIndex that matches the original
                  search term. And that also is sorted based on
                  the execution history of each application
         """

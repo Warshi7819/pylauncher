@@ -8,6 +8,7 @@
 ###################################################
 
 class SearchObject:
+    """Base class for all search plugins."""
 
     def getEnabler(self):
         raise Exception("getEnabler method must be overridden")

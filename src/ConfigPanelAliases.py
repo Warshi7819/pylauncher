@@ -182,5 +182,12 @@ these changes take affect. More info under the \"Indexer\" config tab.
 
 
     def close(self, event=None):
+        """
+        Method to close the aliases config panel
+        Args:
+          event = The close event
+
+        Returns: None
+        """
         if event:
             event.Skip()

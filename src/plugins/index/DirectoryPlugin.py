@@ -22,6 +22,9 @@ class DirectoryPlugin(IndexerObject.IndexerObject):
     def __init__(self, config, indexer):
         """
         Class constructor
+        Args:
+          config = The application config
+          indexer = The indexer object
         """
         
         self.config = config
@@ -78,10 +81,9 @@ class DirectoryPlugin(IndexerObject.IndexerObject):
     def fetchApps(self):
         """
         Method to fetch apps from the directories given
-        Args:
-          directories = The list of directories we want to index
+        Args: None
 
-        Returns: None
+        Returns: [LIST] List of applications found
         """
         
         directories = self.config.config["directories"]

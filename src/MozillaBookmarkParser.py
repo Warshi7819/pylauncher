@@ -22,7 +22,7 @@ class MozillaBookmarkParser:
         """
         Class constructor
         Args:
-          None
+          config = The application config
         """
         self.config = config
         self.firefoxDir = self.config.config["shellfolders"]["AppData"][0]
@@ -35,7 +35,7 @@ class MozillaBookmarkParser:
         Args:
           None
 
-        Returns: a list of link names and adresses
+        Returns: [DICT] A dictionary of link names and adresses
         """
         bookmarks = {}
 

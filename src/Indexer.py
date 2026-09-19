@@ -141,7 +141,7 @@ class Indexer(threading.Thread):
         the system is idle
         
         Args:
-          force [BOOLEAN]: Wheter or not we should force a immidiate reindex or
+          force [BOOLEAN] = Wheter or not we should force a immidiate reindex or
                            if we should wait until the system is idle before
                            we trigger one
 
@@ -158,7 +158,7 @@ class Indexer(threading.Thread):
         Args:
           None
 
-        Returns: True if index is ready, False otherwise
+        Returns: [BOOLEAN] True if index is ready, False otherwise
         """
         if self.READY:
             return True
@@ -199,8 +199,9 @@ class Indexer(threading.Thread):
         Method to get the string to execute given an indes
         Args:
           index = The index of the program in the applist
+          startChar = The starting character of the search
 
-        Returns: The command to execute (string)
+        Returns: [STRING] The command to execute
         """
         # Map from list to correct application
         key = self.mapping[index]

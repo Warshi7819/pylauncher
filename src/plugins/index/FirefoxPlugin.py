@@ -24,7 +24,8 @@ class FirefoxPlugin(IndexerObject.IndexerObject):
         """
         Class constructor
         Args:
-          None
+          config = The application config
+          indexer = The indexer object
         """
         self.config = config
         self.indexer = indexer
@@ -39,7 +40,7 @@ class FirefoxPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: a list of link names and adresses
+        Returns: [LIST] a list of link names and adresses
         """
         bookmarks = {}
 
@@ -103,7 +104,7 @@ class FirefoxPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: True
+        Returns: [BOOLEAN] True
         """
         return True
 
@@ -113,7 +114,7 @@ class FirefoxPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: A string describing the plugin
+        Returns: [STRING] A string describing the plugin
         """
         return "When activated this plugin will index\n" \
                + "the bookmarks firefox has if firefox is\n" \

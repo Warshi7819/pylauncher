@@ -23,7 +23,8 @@ class AliasPlugin(IndexerObject.IndexerObject):
         """
         Class constructor
         Args:
-          None
+          config = The application config
+          indexer = The indexer object
         """
         self.config = config
         self.indexer = indexer
@@ -35,7 +36,7 @@ class AliasPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: list of aliases
+        Returns: [LIST] list of aliases
         """
 
         appList = []
@@ -54,7 +55,7 @@ class AliasPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: True
+        Returns: [BOOLEAN] True
         """
         return True
 
@@ -65,7 +66,7 @@ class AliasPlugin(IndexerObject.IndexerObject):
         Args:
           None
 
-        Returns: A string describing the plugin
+        Returns: [STRING] A string describing the plugin
         """
         return "When activated this plugin will index\n" \
                + "the aliases.txt file present on the system."

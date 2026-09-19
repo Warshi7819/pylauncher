@@ -46,10 +46,9 @@ class ImdbPlugin(SearchObject.SearchObject):
     def getEnabler(self):
         """
         Method that returns the search enabler
-        Args:
-          None
+        Args: None
 
-        Returns
+        Returns: [STRING] The search enabler prefix
         """
         return self.searchEnabler
 

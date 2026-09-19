@@ -29,10 +29,9 @@ class Aliases:
     def loadAliases(self):
         """
         Method to load aliases from file
-        Args:
-          filename = The name of the alias file
+        Args: None
 
-        Returns: A list of aliases [name, execute, args]
+        Returns: [LIST] A list of aliases [name, execute, args]
         """
         data = []
 
@@ -111,7 +110,7 @@ class Aliases:
         Args:
           None
 
-        Returns: True, we want aliases to be a part of the default setup
+        Returns: [BOOLEAN] True, we want aliases to be a part of the default setup
         """
         return True
 

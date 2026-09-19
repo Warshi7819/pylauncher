@@ -18,8 +18,20 @@ from Wizard import ALWizard
 
 
 class AboutDialog(wx.Dialog):
+    """Dialog that displays about information for AL."""
+
     def __init__(self, parent, ID, title, size=wx.DefaultSize,
                  pos=wx.DefaultPosition, style=wx.DEFAULT_DIALOG_STYLE):
+        """
+        Initialize the about dialog.
+        Args:
+          parent = The parent window
+          ID = The dialog ID
+          title = The dialog title
+          size = The dialog size
+          pos = The dialog position
+          style = The dialog style
+        """
         wx.Dialog.__init__(self, parent, ID, title, pos, size, style)
 
         # Fill in content
@@ -86,7 +98,7 @@ class AboutDialog(wx.Dialog):
         Args:
           event = The button event
 
-        Retruns: None
+        Returns: None
         """
         wizard = ALWizard(self)
         wizard.runWizard()

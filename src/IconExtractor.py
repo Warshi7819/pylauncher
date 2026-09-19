@@ -24,12 +24,25 @@ from GuiUtils import openAsBitmap, rescaleBitmap
 _defaultBitmap = None
 
 def _getDefaultBitmap():
+    """
+    Function to get the default bitmap icon
+    Args: None
+
+    Returns: [BITMAP] The default bitmap
+    """
     global _defaultBitmap
     if _defaultBitmap is None:
         _defaultBitmap = rescaleBitmap(openAsBitmap("icons/default.png"))
     return _defaultBitmap
 
 def convertIconToBitmap(icon):
+    """
+    Function to convert an icon to a 16x16 bitmap
+    Args:
+      icon = The icon to convert
+
+    Returns: [BITMAP] The icon as a bitmap
+    """
     try:
         bmp = wx.Bitmap(icon)
     except Exception:
@@ -48,9 +61,10 @@ def getIcon(filename, _seen=None):
     """
     Function to fetch matching icons for files and extensions
     Args:
-      extension = A file extension e.g. '.jpg' or a filepath
+      filename = A file extension e.g. '.jpg' or a filepath
+      _seen = Set of already visited files to prevent infinite recursion
 
-    Returns: The image as an icon
+    Returns: [BITMAP] The image as a bitmap
     """
 
 

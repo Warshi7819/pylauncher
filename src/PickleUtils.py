@@ -22,7 +22,7 @@ def loadFromFile(filename):
     if os.path.isfile(filename):
         try:
             fp = open(filename, "rb")
-            data = pickle.loads(fp.read())
+            data = pickle.load(fp)
             fp.close()
         except Exception as e:
             return None

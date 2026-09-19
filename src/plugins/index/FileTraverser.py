@@ -35,7 +35,7 @@ class FileTraverser:
           directory = The path where we should start traversing
           filterSpec = The file filter
 
-        Returns: List of matches
+        Returns: [LIST] List of matches
         """
 
         filter = FileFilter(filterSpec)
@@ -94,7 +94,7 @@ class FileFilter:
         Args:
           filename = The filename we want to test
 
-        Returns: False if the file matches the filter, that is do not filter
+        Returns: [BOOLEAN] False if the file matches the filter, that is do not filter
                  this file. True if the file does not match
         """
 

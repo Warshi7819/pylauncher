@@ -19,6 +19,10 @@ class Node(object):
     __slots__ = ['matches', 'children', 'root', 'str', 'id']
 
     def __init__(self):
+        """
+        Initialize a suffix tree node
+        Args: None
+        """
         self.matches = [] # List of matches on current node
         self.children = {} # list of children
         self.root = False # root or not root, that is the question
@@ -27,6 +31,7 @@ class Node(object):
 
 
 class Tree:
+    """Suffix tree for fast substring search."""
 
     def __init__(self, caseSensitive = False):
         """
@@ -50,7 +55,7 @@ class Tree:
         Args:
           searchString = The string to search for
 
-        Returns: A list of matches found
+        Returns: [LIST] A list of matches found
         """
         self.searchResults = []
         self.foundNode = None
@@ -128,6 +133,8 @@ class Tree:
         given node and gathers all matches
         Args:
           node = The current node in the recursion
+
+        Returns: None
         """
         self.searchResults.extend(node.matches)
             
@@ -141,7 +148,7 @@ class Tree:
         Args:
           None
 
-        Returns: A list of search results
+        Returns: [LIST] A list of search results
         """
         self.searchResults.sort()
         tmp = []
@@ -167,6 +174,8 @@ class Tree:
         Args:
           str = The new string we want to add to the tree
           id = The id of the string
+
+        Returns: None
         """
         str = str.strip("\n").strip("\r").strip()
         if not self.caseSensitive:
@@ -279,6 +288,7 @@ class Tree:
         Args:
           subString = The subString to add
           id = The id of the new string
+          parent = The parent node
 
         Returns: None
         """
@@ -345,8 +355,9 @@ class Tree:
         """
         Method to load playlist data used for testing
         the suffix tree implementation
-        Args:
-          None
+        Args: None
+
+        Returns: [LIST] The test data loaded from the playlist file
         """
         testSet = []
         if os.path.isfile("playlist.pypl"):

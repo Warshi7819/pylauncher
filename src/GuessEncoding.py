@@ -36,7 +36,7 @@ class GuessEncoding:
         Args:
           data [STRING] = The byte string we want to encode
 
-        Returns [STRING] = The string utf-8 encoded
+        Returns: [STRING] The string utf-8 encoded
         """
 
         # Guess encoding and try to convert it
@@ -52,8 +52,8 @@ class GuessEncoding:
         Args:
           data [STRING] = The string we want to decode
 
-        Returns [TUPLE]: (decoded_unicode, successful_encoding) or if
-                         we fail we raise a UnicodeError
+        Returns: [TUPLE] (decoded_unicode, successful_encoding) or if
+                          we fail we raise a UnicodeError
         """
 
         if type(data) == type(u""):

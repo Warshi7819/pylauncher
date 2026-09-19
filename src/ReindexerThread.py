@@ -42,8 +42,8 @@ class ReindexerThread(threading.Thread):
         """
         Method to request reindex
         Args:
-          force [BOOLEAN]: Wheter or not if we should force an immediat 
-                           reindex or wait until the machine is IDLE
+          force [BOOLEAN] = Wheter or not if we should force an immediat 
+                            reindex or wait until the machine is IDLE
         
         Returns: [Queue] The queue
         """
@@ -106,7 +106,7 @@ class ReindexerThread(threading.Thread):
         Args: 
           None
           
-        Returns [BOOLEAN]: True if new index was made False otherwise
+        Returns: [BOOLEAN] True if new index was made False otherwise
         """
         try:
             if self.indexer.isReady():
@@ -136,7 +136,7 @@ class ReindexerThread(threading.Thread):
         Args:
           None
           
-        Returns: True if machine has been idle for 10 minutes, False otherwise
+        Returns: [BOOLEAN] True if machine has been idle for 10 minutes, False otherwise
         """
         
         timeToBeat = 10*60

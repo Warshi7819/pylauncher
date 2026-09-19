@@ -41,7 +41,7 @@ class TitledPage(WizardPageSimple):
           wizPg = The wizard page
           title = The title of the page
 
-        Returns = The page sizer
+        Returns: [SIZER] The page sizer
         """
         sizer = wx.BoxSizer(wx.VERTICAL)
         wizPg.SetSizer(sizer)
@@ -73,7 +73,7 @@ class ALWizard:
         Args:
           None
 
-        Returns None
+        Returns: None
         """
 
         bmp = openAsBitmap("images\\wizard.bmp")
@@ -192,7 +192,7 @@ Testers:
           title = The title of the url
           url = The url itself
 
-        Returns = The hyperlink created
+        Returns: [HYPERLINK] The hyperlink created
         """
         # Draw hyperlink to sourceforge
         link = hl.HyperLinkCtrl(window, wx.ID_ANY,

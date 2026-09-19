@@ -17,7 +17,7 @@ def fetchShellFolders():
     Args:
       None
 
-    Returns: A dictionary with all the shell folder names and their
+    Returns: [DICT] A dictionary with all the shell folder names and their
              respective path
     """
     

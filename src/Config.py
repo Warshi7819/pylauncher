@@ -30,6 +30,7 @@ class Config:
     def __init__(self):
         """
         Class constructor
+        Args: None
         """
         shellFolders = fetchShellFolders()
         appDataDir = os.path.join(shellFolders["AppData"][0], "AL")
@@ -76,10 +77,9 @@ class Config:
     def loadConfig(self):
         """
         Method used to load the config
-        Args:
-          filename = The filename of the config file
+        Args: None
 
-        Returns: Dictionary containing the parsed config
+        Returns: [DICT] Dictionary containing the parsed config
         """
 
         config = loadFromFile(self.filename)
@@ -112,9 +112,26 @@ class Config:
         
 
     def getPath(self, key):
+        """
+        Method to get the path for a given key
+        Args:
+          key = The directory key
+
+        Returns: [STRING] The path to the directory
+        """
         return self.config["directories"][key][0][0]
 
     def addItem(self, key, path, exts, edit):
+        """
+        Method to add or edit a directory item
+        Args:
+          key = The name of the item
+          path = The directory path
+          exts = The list of file extensions
+          edit = The key of the item being edited, or None for new items
+
+        Returns: [BOOLEAN] True on success, error message string on failure
+        """
         
         if not key:
             return "Please choose a name for this entry"
@@ -160,6 +177,12 @@ class Config:
 
 
     def defaultConfig(self):
+        """
+        Method to generate the default configuration
+        Args: None
+
+        Returns: [DICT] The default configuration dictionary
+        """
         config = {}
         config["directories"] = {}
 

@@ -8,6 +8,7 @@
 ###################################################
 
 class IndexerObject:
+    """Base class for all indexer plugins."""
 
     def fetchApps(self, args=None):
         raise Exception("fetchApps method must be overridden")

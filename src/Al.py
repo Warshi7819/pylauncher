@@ -576,11 +576,25 @@ class AlFrame(wx.Frame):
 
 
 class Al(wx.App):
+    """Main wxPython application class for AL."""
+
     def __init__(self, redirect=False, filename=None):
+        """
+        Initialize the application.
+        Args:
+          redirect = Redirect stdout/stderr to file
+          filename = The filename to redirect to
+        """
         wx.App.__init__(self, redirect, filename)
         
     
     def OnInit(self):
+        """
+        Called on application initialization.
+        Args: None
+
+        Returns: [BOOLEAN] True if initialization succeeded
+        """
         frame = AlFrame(None)
         return True
 
