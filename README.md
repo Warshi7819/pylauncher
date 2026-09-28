@@ -63,7 +63,7 @@ Press the cog icon in the upper left corner of the AL application to configure i
 ### Install Dependencies
 
 ```bash
-pip install wxpython pywin32
+pip install wxpython pywin32 pyinstaller
 ```
 
 ### Run

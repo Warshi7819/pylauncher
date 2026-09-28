@@ -1,6 +1,8 @@
 
-2026:
+V_1_1_0_RELEASE (2026)
  - Ported to Python 3.12 and wxPython 4.3.1
+
+ - Updated build script to modern PyInstaller and the installer to Inno Setup 6
 
 
 --- Old History ---

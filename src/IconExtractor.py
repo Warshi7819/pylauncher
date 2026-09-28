@@ -20,6 +20,7 @@ import wx
 
 # Import own modules
 from GuiUtils import openAsBitmap, rescaleBitmap
+from Logger import Logger
 
 _defaultBitmap = None
 
@@ -102,7 +103,8 @@ def getIcon(filename, _seen=None):
          
             # Get the data
             return getIcon(sh.GetPath(shell.SLGP_RAWPATH)[0], _seen)
-        except Exception:
+        except Exception as e:
+            Logger().warning("Could not resolve shortcut %s: %s" % (filename, e))
             return _getDefaultBitmap()
 
 

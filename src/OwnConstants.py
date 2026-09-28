@@ -11,7 +11,7 @@
 import wx.lib.newevent
 
 # Application version
-APP_VERSION = "1.0.7"
+APP_VERSION = "1.1.0"
 
 # Internal versions
 CONFIG_VERSION = "0.0.3"
