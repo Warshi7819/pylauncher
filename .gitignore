@@ -1,3 +1,8 @@
 *.pyc
 __pycache__/
 .vs/
+src/buildAl/
+src/distAl/
+src/Al.spec
+dist/
+/tmp
