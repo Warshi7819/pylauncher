@@ -11,6 +11,7 @@
 from .DirectoryPlugin import DirectoryPlugin
 from .FirefoxPlugin import FirefoxPlugin
 from .AliasPlugin import AliasPlugin
+from .AppsFolderPlugin import AppsFolderPlugin
 
 # List of available plugins
-indexerPlugins = ["DirectoryPlugin", "FirefoxPlugin", "AliasPlugin"]
+indexerPlugins = ["DirectoryPlugin", "FirefoxPlugin", "AliasPlugin", "AppsFolderPlugin"]

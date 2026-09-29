@@ -36,6 +36,27 @@ def _getDefaultBitmap():
         _defaultBitmap = rescaleBitmap(openAsBitmap("icons/default.png"))
     return _defaultBitmap
 
+def _getAppsFolderIcon(path, _seen):
+    """
+    Function to extract icon from a shell:AppsFolder path.
+    Args:
+      path = The shell:AppsFolder path (e.g. shell:AppsFolder\AppId)
+      _seen = Set of already visited files to prevent infinite recursion
+
+    Returns: [BITMAP] The icon as a bitmap
+    """
+    try:
+        # Look up cached icon from AppsFolderPlugin by full exec path
+        from plugins.index.AppsFolderPlugin import appsFolderIconCache
+        lowerPath = path.lower()
+        if lowerPath in appsFolderIconCache:
+            return appsFolderIconCache[lowerPath]
+
+        return _getDefaultBitmap()
+
+    except Exception:
+        return _getDefaultBitmap()
+
 def convertIconToBitmap(icon):
     """
     Function to convert an icon to a 16x16 bitmap
@@ -84,6 +105,10 @@ def getIcon(filename, _seen=None):
     if filename in _seen:
         return _getDefaultBitmap()
     _seen.add(filename)
+
+    # UWP/Store apps via shell:AppsFolder
+    if filename.startswith("shell:appsfolder\\"):
+        return _getAppsFolderIcon(filename, _seen)
 
     # http == .url
     if filename.startswith("http"):

@@ -10,6 +10,7 @@
 # Import standard modules
 import win32api
 import os
+import subprocess
 import threading
 
 class AppLauncher(threading.Thread):
@@ -43,19 +44,26 @@ class AppLauncher(threading.Thread):
         if self.command:
             if not self.alias:
                 # Execute file
-                try:
-                    os.startfile(self.command)
-                except UnicodeEncodeError as e:
-                    # Guess encoding from defined list
-                    for best_enc in ['us-ascii','iso-8859-1','iso-8859-2']:
-                        try:
-                            tmp = self.command.encode(best_enc)
-                            os.startfile(tmp)
-                            break
-                        except Exception as e: 
-                            # Failed encoding or failed starting with that encoding
-                            # Try next if any
-                            pass
+                if self.command.startswith("shell:AppsFolder\\"):
+                    # UWP/Store app, launch via explorer.exe
+                    try:
+                        subprocess.Popen(["explorer.exe", self.command])
+                    except Exception:
+                        pass
+                else:
+                    try:
+                        os.startfile(self.command)
+                    except UnicodeEncodeError as e:
+                        # Guess encoding from defined list
+                        for best_enc in ['us-ascii','iso-8859-1','iso-8859-2']:
+                            try:
+                                tmp = self.command.encode(best_enc)
+                                os.startfile(tmp)
+                                break
+                            except Exception as e: 
+                                # Failed encoding or failed starting with that encoding
+                                # Try next if any
+                                pass
 
             else:
                 # use win32api on aliases since we have experienced some
