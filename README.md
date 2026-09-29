@@ -13,7 +13,7 @@ Originally created in the early 2000's, last release v1.0.7 was in 2007. This is
 ## Features
 
 - **Wizard:** A wizard that enables you to learn how to use it in less than 2 minutes.
-- **Zero configuration:** No configuration tweaking is needed. All programs on your start-menu, the quick launch bar and all your Favorites in both Internet Explorer and Firefox are indexed by default. Just install it and it's ready to be used.
+- **Zero configuration:** No configuration tweaking is needed. All programs on your start-menu, Windows Apps (UWP), the quick launch bar and all your Favorites in both Internet Explorer and Firefox are indexed by default. Just install it and it's ready to be used.
 - **AL learns:** Based on your searches and how many times a program is executed, AL is able to rank the search results so that the search experience only gets better over time. The programs you often execute will in time find their way to the top of the search results.
 - **Full control:** You can easily add more folders and have full control over what AL makes searchable. AL also supports aliases which can be easily configured. Just press the cog-icon at the upper left corner to get your hands on the advanced settings.
 - **External searches:** AL supports executing searches on different sites. For instance typing `g:<search term>` executes a search at google.com. See Search Plugins below for details.
