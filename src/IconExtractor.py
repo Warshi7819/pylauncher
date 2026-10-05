@@ -39,6 +39,7 @@ def _getDefaultBitmap():
 def _getAppsFolderIcon(path, _seen):
     """
     Function to extract icon from a shell:AppsFolder path.
+    Looks up cached icons first; if cache miss, extracts lazily.
     Args:
       path = The shell:AppsFolder path (e.g. shell:AppsFolder\AppId)
       _seen = Set of already visited files to prevent infinite recursion
@@ -46,11 +47,20 @@ def _getAppsFolderIcon(path, _seen):
     Returns: [BITMAP] The icon as a bitmap
     """
     try:
-        # Look up cached icon from AppsFolderPlugin by full exec path
-        from plugins.index.AppsFolderPlugin import appsFolderIconCache
+        from plugins.index.AppsFolderPlugin import appsFolderIconCache, extractUwpIcon
+
         lowerPath = path.lower()
         if lowerPath in appsFolderIconCache:
             return appsFolderIconCache[lowerPath]
+
+        # Cache miss: extract icon lazily (e.g. when loaded from
+        # applist.dat cache without repopulate)
+        appId = path[len("shell:appsfolder\\"):]
+        if appId != "":
+            bmp = extractUwpIcon(appId)
+            if bmp != None:
+                appsFolderIconCache[lowerPath] = bmp
+                return bmp
 
         return _getDefaultBitmap()
 
